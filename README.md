@@ -42,3 +42,11 @@ Creamos la base de datos con el nombre que le dimos en el .env
 ```
 DB_DATABASE
 ```
+
+### Tarea 21/08/2020
+
+Apliqué el mismo concepto que hicimos en el catalogo pero para este proyecto. Busquen las migraciones y analicenlo. Haganse un diagrama de las tablas si no lo entienden.
+Quiero que la clase que viene intenten hacer esto si tienen tiempo:
+- crear un seeder para cada nueva tabla correspondiente y alimentarlo con dos registros.
+- crear las rutas correspondientes de lectura a estas dos nuevas tablas (recuerden que tienen que crear los modelos (User.php es un ej de Modelo)), las rutas se encuentran en api.php. quiero que terminen quedando 6 rutas en total (2 existentes de usuario y las 4 nuevas).
+Suerte.
