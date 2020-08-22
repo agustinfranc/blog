@@ -50,3 +50,20 @@ Quiero que la clase que viene intenten hacer esto si tienen tiempo:
 - crear un seeder para cada nueva tabla correspondiente y alimentarlo con dos registros.
 - crear las rutas correspondientes de lectura a estas dos nuevas tablas (recuerden que tienen que crear los modelos (User.php es un ej de Modelo)), las rutas se encuentran en api.php. quiero que terminen quedando 6 rutas en total (2 existentes de usuario y las 4 nuevas).
 Suerte.
+
+### 21/08/2020
+
+Modifiqué los seeders para que se puedan insertar varios registros.
+Siempre que modificamos los seeders vamos a correr estos comandos:
+
+actualizamos el vendor
+
+```
+composer dump-autoload
+```
+
+y volvemos a ejecutar las migraciones y sus seeds
+
+```
+php artisan migrate:fresh --seed
+```
