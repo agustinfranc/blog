@@ -67,3 +67,7 @@ y volvemos a ejecutar las migraciones y sus seeds
 ```
 php artisan migrate:fresh --seed
 ```
+
+### Tarea 29/08/2020
+
+Agregar los metodos api para los demas controladores con sus respectivas rutas
