@@ -18,8 +18,22 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 
-Route::get('/users', 'UserController@index');
+// ? php artisan route:list
 
-Route::get('/users/{id}', 'UserController@show');
+/* Route::prefix('users')->group(function () {
+    Route::get('/', 'UserController@index');        // http://127.0.0.1:8000/api/users/
+    Route::get('/{id}', 'UserController@show');     // http://127.0.0.1:8000/api/users/1
+}); */
 
 //Route::apiResource('/users', 'UserController');
+
+Route::apiResource('/users', 'UserController');
+
+/* Route::prefix('posts')->group(function () {
+    Route::prefix('/{post_id}/comments')->group(function () {
+        Route::get('/', 'CommentController@index');        // http://127.0.0.1:8000/api/post/1/comments/
+        Route::get('/{id}', 'CommentController@show');     // http://127.0.0.1:8000/api/post/1/comments/1
+    });
+    Route::get('/', 'PostController@index');        // http://127.0.0.1:8000/api/posts/
+    Route::get('/{id}', 'PostController@show');     // http://127.0.0.1:8000/api/posts/1
+}); */
