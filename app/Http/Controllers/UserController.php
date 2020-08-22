@@ -43,7 +43,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return response()->json(User::findOrFail($id));
+        $user = User::find($id);
+
+        if (!$user) return response()->json(['errorCode' => 500, 'errorMessage' => 'No se encontró el usuario']);
+
+        return response()->json($user);
     }
 
     public function update(Request $request, $id)
