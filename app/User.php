@@ -38,4 +38,18 @@ class User extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relationships
+     */
+
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+
+    public function postComment()
+    {
+        return $this->hasOneThrough('App\Comment', 'App\Post');
+    }
 }

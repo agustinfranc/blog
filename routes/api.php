@@ -28,6 +28,8 @@ use Illuminate\Support\Facades\Route;
 //Route::apiResource('/users', 'UserController');
 
 Route::apiResource('/users', 'UserController');
+Route::apiResource('/posts', 'PostController');
+Route::apiResource('/comments', 'CommentController');
 
 /* Route::prefix('posts')->group(function () {
     Route::prefix('/{post_id}/comments')->group(function () {
@@ -37,3 +39,7 @@ Route::apiResource('/users', 'UserController');
     Route::get('/', 'PostController@index');        // http://127.0.0.1:8000/api/posts/
     Route::get('/{id}', 'PostController@show');     // http://127.0.0.1:8000/api/posts/1
 }); */
+
+Route::get('users/{userId}/posts/{postId}/comment/{id}', 'CommentController@showByUserAndPost');
+
+Route::get('users/{id}/posts', 'PostController@getByUser');

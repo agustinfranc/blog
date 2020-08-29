@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Http\Controllers\Controller;
+use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -43,7 +45,13 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        // $user = User::find($id);
+
+        $user = User::with(['posts'])->find($id);
+
+        foreach ($user->posts as $post) {
+            $post->comments = Post::find($post->id)->comments()->get();
+        }
 
         if (!$user) return response()->json(['errorCode' => 500, 'errorMessage' => 'No se encontró el usuario']);
 
